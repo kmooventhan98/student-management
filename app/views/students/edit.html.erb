@@ -1,0 +1,27 @@
+<div class="container-xl text-center mt-2">
+	<h1> New student </h1>
+	<hr>
+	<%= form_with model: @student do |form| %>
+			<% if @student.errors.any? %>
+				<div class="alert alert-danger" role="alert">
+					<% @student.errors.full_messages.each do |message|%>
+						<p> <%= message %>  </p>
+					<% end %>
+				</div>
+			<% end %>
+		<div>
+			<%= form.label :first_name %> <br>
+			<%= form.text_field :first_name %>
+		</div>
+		<div>
+			<%= form.label :last_name %> <br>
+			<%= form.text_field :last_name %>
+		</div>
+		<div>
+			<%= form.label :email %> <br>
+			<%= form.email_field :email %>
+		</div> <br>
+		<div> <%= form.submit :save %> | <%= link_to 'Back', :back %></div>
+		
+	<% end %>
+</div>

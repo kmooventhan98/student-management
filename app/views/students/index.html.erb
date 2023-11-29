@@ -4,13 +4,19 @@
 		<tr>
 			<th> First Name</th>	
 			<th> Last Name</th>	
-			<th> Email Name.</th>	
+			<th> Email </th>
+			<th> Joined on </th>
+			<th colspan = "3" class = "text-center"> Action</th>	
 		</tr>
 		<% @students.each do |student| %>
 			<tr>
 				<td> <%= student.first_name%> </td>
 				<td> <%= student.last_name%> </td>
 				<td> <%= student.email%> </td>
+				<td> <%= format_date(student.created_at) %> </td>
+				<td> <%= link_to "Show", student %> </td>
+				<td> <%= link_to "Edit", edit_student_path(student) %> </td>
+				<td> <%= link_to "Delete", student, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> </td>
 			</tr>
 		<% end %>
 	</table>
