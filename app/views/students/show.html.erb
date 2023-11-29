@@ -1,0 +1,19 @@
+<div class="container-xl">
+	<h1 class="text-center mt-2"><%= @student.first_name %></h1>
+	<table class="table table-striped">
+		<tr>
+			<th> First Name</th>	
+			<th> Last Name</th>	
+			<th> Email Name.</th>	
+		</tr>
+
+			<tr>
+				<td> <%= @student.first_name%> </td>
+				<td> <%= @student.last_name%> </td>
+				<td> <%= @student.email%> </td>
+			</tr>
+
+	</table>
+  <%= link_to 'Back', students_path %>
+
+</div>
